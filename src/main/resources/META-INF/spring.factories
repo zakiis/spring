@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.zakiis.boot.interceptor.MybatisCipherInterceptor
+com.zakiis.boot.autoconfigure.MybatisCipherAutoConfiguration

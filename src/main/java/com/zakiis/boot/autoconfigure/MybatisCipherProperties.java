@@ -5,9 +5,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "mybatis.cipher")
 public class MybatisCipherProperties {
 
-	/** AES secret key in base64 format*/
+	private boolean enabled;
+	/** AES secret key in hex format*/
 	private String secret;
-	/** Initialization vector in base64 format*/
+	/** Initialization vector in hex format*/
 	private String iv;
 	
 	public String getSecret() {
@@ -21,6 +22,12 @@ public class MybatisCipherProperties {
 	}
 	public void setIv(String iv) {
 		this.iv = iv;
+	}
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 	
 }

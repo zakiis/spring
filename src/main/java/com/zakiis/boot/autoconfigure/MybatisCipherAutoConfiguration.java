@@ -15,7 +15,7 @@ import com.zakiis.security.codec.HexUtil;
 @EnableConfigurationProperties(MybatisCipherProperties.class)
 public class MybatisCipherAutoConfiguration {
 	
-	Logger logger = LoggerFactory.getLogger(getClass());
+	Logger logger = LoggerFactory.getLogger(MybatisCipherAutoConfiguration.class);
 	
 	@Bean
 	public MybatisCipherInterceptor mybatisCipherInterceptor(MybatisCipherProperties mybatisCipherProperties) {

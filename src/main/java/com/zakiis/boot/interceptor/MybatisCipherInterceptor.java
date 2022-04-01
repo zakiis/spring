@@ -30,6 +30,7 @@ import com.zakiis.security.CipherUtil;
 @Intercepts({
 	@Signature(type = ResultSetHandler.class, method = "handleResultSets", args = {Statement.class}),
 	@Signature(type = Executor.class, method = "update", args = {MappedStatement.class, Object.class}),
+	@Signature(type = Executor.class, method = "query", args = {MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class}),
 	@Signature(type = Executor.class, method = "query", args = {MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class, CacheKey.class, BoundSql.class})
 	
 })

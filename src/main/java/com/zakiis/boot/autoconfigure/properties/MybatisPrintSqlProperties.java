@@ -1,4 +1,4 @@
-package com.zakiis.boot.autoconfigure;
+package com.zakiis.boot.autoconfigure.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

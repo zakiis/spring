@@ -7,6 +7,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.zakiis.boot.autoconfigure.properties.MybatisCipherProperties;
 import com.zakiis.boot.interceptor.MybatisCipherInterceptor;
 import com.zakiis.security.codec.HexUtil;
 

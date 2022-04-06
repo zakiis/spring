@@ -1,4 +1,5 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 com.zakiis.boot.autoconfigure.MybatisCipherAutoConfiguration,\
 com.zakiis.boot.autoconfigure.MybatisPrintSqlAutoConfiguration,\
-com.zakiis.boot.autoconfigure.TraceIdAutoConfiguration
+com.zakiis.boot.autoconfigure.TraceIdAutoConfiguration,\
+com.zakiis.boot.autoconfigure.DesensitizationAutoConfiguration

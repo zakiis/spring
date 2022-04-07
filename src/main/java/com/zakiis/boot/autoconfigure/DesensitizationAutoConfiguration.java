@@ -4,8 +4,6 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.annotation.PostConstruct;
-
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,9 +25,8 @@ public class DesensitizationAutoConfiguration implements InitializingBean {
 	DesensitizationProperties desensitizationProperties;
 
 	/**
-	 * need add following to logback.xml to make it work
-	 * <conversionRule conversionWord="msg" converterClass="com.zakiis.security.logging.DesensitizationConverter"/>
-	 * @param desensitizationProperties
+	 * need add following to logback.xml to make it work, note that fields msg represents the field in logback pattern.
+	 * &lt;conversionRule conversionWord="msg" converterClass="com.zakiis.security.logging.DesensitizationConverter"/&gt;
 	 */
 	@Override
 	public void afterPropertiesSet() throws Exception {

@@ -19,8 +19,9 @@ public class TraceIdAutoConfiguration {
 	
 	@Bean
 	public TraceIdFilter traceIdFilter(TraceIdProperties traceIdProperties) {
-		log.info("trace id filter enabled.");
+		log.info("Trace id filter enabled.");
 		TraceIdFilter traceIdFilter = new TraceIdFilter(traceIdProperties);
 		return traceIdFilter;
 	}
+	
 }

@@ -26,6 +26,4 @@ public class ClientHttpTraceIdFilter implements ClientHttpRequestInterceptor {
 		return execution.execute(request, body);
 	}
 
-	
-
 }

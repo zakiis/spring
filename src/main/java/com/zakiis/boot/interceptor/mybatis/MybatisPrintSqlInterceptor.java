@@ -1,4 +1,4 @@
-package com.zakiis.boot.interceptor;
+package com.zakiis.boot.interceptor.mybatis;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

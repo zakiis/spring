@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.zakiis.boot.autoconfigure.properties.MybatisPrintSqlProperties;
-import com.zakiis.boot.interceptor.MybatisPrintSqlInterceptor;
+import com.zakiis.boot.interceptor.mybatis.MybatisPrintSqlInterceptor;
 
 @Configuration
 @AutoConfigureBefore(MybatisCipherAutoConfiguration.class)

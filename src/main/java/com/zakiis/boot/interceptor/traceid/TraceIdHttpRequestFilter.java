@@ -1,4 +1,4 @@
-package com.zakiis.boot.interceptor;
+package com.zakiis.boot.interceptor.traceid;
 
 import java.io.IOException;
 
@@ -18,12 +18,12 @@ import com.zakiis.boot.autoconfigure.properties.TraceIdProperties;
 import com.zakiis.common.TraceIdUtil;
 
 @Order(Ordered.HIGHEST_PRECEDENCE)
-public class TraceIdFilter extends OncePerRequestFilter {
+public class TraceIdHttpRequestFilter extends OncePerRequestFilter {
 
 	private String traceIdHeaderName;
-	private Logger log = LoggerFactory.getLogger(TraceIdFilter.class);
+	private Logger log = LoggerFactory.getLogger(TraceIdHttpRequestFilter.class);
 	
-	public TraceIdFilter(TraceIdProperties traceIdProperties) {
+	public TraceIdHttpRequestFilter(TraceIdProperties traceIdProperties) {
 		TraceIdUtil.init(traceIdProperties.getAppName() + "_");
 		traceIdHeaderName = traceIdProperties.getHeader();
 	}

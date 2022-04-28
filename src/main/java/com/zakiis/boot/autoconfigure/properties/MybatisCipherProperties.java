@@ -10,6 +10,8 @@ public class MybatisCipherProperties {
 	private String secret;
 	/** Initialization vector in hex format*/
 	private String iv;
+	/** fuzzy query would make the encrypted content more bigger */
+	private boolean enableFuzzyQuery;
 	
 	public String getSecret() {
 		return secret;
@@ -28,6 +30,12 @@ public class MybatisCipherProperties {
 	}
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	}
+	public boolean isEnableFuzzyQuery() {
+		return enableFuzzyQuery;
+	}
+	public void setEnableFuzzyQuery(boolean enableFuzzyQuery) {
+		this.enableFuzzyQuery = enableFuzzyQuery;
 	}
 	
 }

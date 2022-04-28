@@ -32,7 +32,7 @@ public class MybatisAutoConfiguration {
 			logger.info("Mybatis Cipher Interceptor enabled");
 			byte[] secret = HexUtil.toByteArray(mybatisCipherProperties.getSecret());
 			byte[] iv = HexUtil.toByteArray(mybatisCipherProperties.getIv());
-			return new MybatisCipherInterceptor(secret, iv);
+			return new MybatisCipherInterceptor(secret, iv, mybatisCipherProperties.isEnableFuzzyQuery());
 		}
 	}
 	

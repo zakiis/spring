@@ -36,8 +36,8 @@ import com.zakiis.security.CipherUtil;
 })
 public class MybatisCipherInterceptor implements Interceptor {
 	
-	public MybatisCipherInterceptor(byte[] aesSecretKey, byte[] iv) {
-		CipherUtil.init(aesSecretKey, iv);
+	public MybatisCipherInterceptor(byte[] aesSecretKey, byte[] iv, boolean enableFuzzyQuery) {
+		CipherUtil.init(aesSecretKey, iv, enableFuzzyQuery);
 	}
 	
 	Logger log = LoggerFactory.getLogger(getClass());
@@ -63,25 +63,31 @@ public class MybatisCipherInterceptor implements Interceptor {
 			if (param == null) {
 				return invocation.proceed();
 			}
+			MappedStatement statement = (MappedStatement)invocation.getArgs()[0];
+			boolean criteriaEncrypt = false;
+			if (SqlCommandType.SELECT.equals(statement.getSqlCommandType())) {
+				criteriaEncrypt = true;
+			}
 			if (param instanceof Collection) {
 				Collection<?> collection = (Collection<?>)param;
-				collection.forEach(CipherUtil::encrypt);
+				for (Object v : collection) {
+					CipherUtil.encrypt(v, criteriaEncrypt);
+				}
 			} else if (param instanceof Map) { //ParamMap mostly, but Map perhaps when using PageHelper
 				Map<String, ?> paramMap = (Map<String, ?>)param;
-				MappedStatement statement = (MappedStatement)invocation.getArgs()[0];
 				if (SqlCommandType.UPDATE.equals(statement.getSqlCommandType())) {
 					if (paramMap.containsKey("et")) {
-						CipherUtil.encrypt(paramMap.get("et"));
+						CipherUtil.encrypt(paramMap.get("et"), criteriaEncrypt);
 					}
 				} else if (SqlCommandType.SELECT.equals(statement.getSqlCommandType())) {
 					if (paramMap.containsKey("param1")) { //Entity param need put in first element
-						CipherUtil.encrypt(paramMap.get("param1"));
+						CipherUtil.encrypt(paramMap.get("param1"), criteriaEncrypt);
 					}
 				} else {
 					log.error("Sql command type {} not processed by cipher method", statement.getSqlCommandType());
 				}
 			} else {
-				CipherUtil.encrypt(param);
+				CipherUtil.encrypt(param, criteriaEncrypt);
 			}
 			return invocation.proceed();
 		}

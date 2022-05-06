@@ -24,7 +24,7 @@ public class TraceIdAutoConfiguration {
 
 	static Logger log = LoggerFactory.getLogger(TraceIdAutoConfiguration.class);
 	
-	@Bean
+	@Bean("zakiis_traceIdFilter")
 	public TraceIdHttpRequestFilter traceIdFilter(TraceIdProperties traceIdProperties) {
 		log.info("Trace id filter for http request enabled.");
 		TraceIdHttpRequestFilter traceIdFilter = new TraceIdHttpRequestFilter(traceIdProperties);

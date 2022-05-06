@@ -10,6 +10,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
+import com.zakiis.spring.util.ApplicationContextHolder;
+
 @Configuration
 public class WebAutoConfiguration {
 	
@@ -36,6 +38,11 @@ public class WebAutoConfiguration {
 				}
 			};
 		}
+	}
+	
+	@Bean("zakiis_applicationContextHolder")
+	public ApplicationContextHolder applicationContextHolder() {
+		return new ApplicationContextHolder();
 	}
 	
 }

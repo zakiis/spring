@@ -1,4 +1,4 @@
-package com.zakiis.boot.interceptor.damboard;
+package com.zakiis.spring.interceptor.damboard;
 
 import java.io.IOException;
 import java.net.URL;
@@ -13,8 +13,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 
-import com.zakiis.boot.feign.FeignFilter;
-import com.zakiis.boot.feign.FeignFilterChain;
+import com.zakiis.spring.feign.FeignFilter;
+import com.zakiis.spring.feign.FeignFilterChain;
 
 import feign.Request;
 import feign.Request.Options;

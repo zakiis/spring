@@ -1,4 +1,4 @@
-package com.zakiis.boot.interceptor.damboard;
+package com.zakiis.spring.interceptor.damboard;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

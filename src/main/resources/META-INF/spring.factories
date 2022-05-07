@@ -1,7 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.zakiis.boot.autoconfigure.MybatisAutoConfiguration,\
-com.zakiis.boot.autoconfigure.TraceIdAutoConfiguration,\
-com.zakiis.boot.autoconfigure.DesensitizationAutoConfiguration,\
-com.zakiis.boot.autoconfigure.DamBoardAutoConfiguration,\
-com.zakiis.boot.autoconfigure.WebAutoConfiguration,\
-com.zakiis.boot.autoconfigure.AuthorizationAutoConfiguration

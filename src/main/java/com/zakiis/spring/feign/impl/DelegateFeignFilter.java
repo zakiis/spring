@@ -1,9 +1,9 @@
-package com.zakiis.boot.feign.impl;
+package com.zakiis.spring.feign.impl;
 
 import java.io.IOException;
 
-import com.zakiis.boot.feign.FeignFilter;
-import com.zakiis.boot.feign.FeignFilterChain;
+import com.zakiis.spring.feign.FeignFilter;
+import com.zakiis.spring.feign.FeignFilterChain;
 
 import feign.Client;
 import feign.Request;

@@ -1,4 +1,4 @@
-package com.zakiis.boot.interceptor;
+package com.zakiis.spring.interceptor;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.zakiis.boot.interceptor.traceid;
+package com.zakiis.spring.interceptor.traceid;
 
 import java.io.IOException;
 
@@ -7,16 +7,15 @@ import org.springframework.http.client.ClientHttpRequestExecution;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
 
-import com.zakiis.boot.autoconfigure.properties.TraceIdProperties;
 import com.zakiis.common.TraceIdUtil;
 
 public class TraceIdClientHttpRequestFilter implements ClientHttpRequestInterceptor {
 
 	private String traceIdHeaderName;
 	
-	public TraceIdClientHttpRequestFilter(TraceIdProperties traceIdProperties) {
-		TraceIdUtil.init(traceIdProperties.getAppName() + "_");
-		traceIdHeaderName = traceIdProperties.getHeader();
+	public TraceIdClientHttpRequestFilter(String appName, String headerName) {
+		TraceIdUtil.init(appName + "_");
+		traceIdHeaderName = headerName;
 	}
 	
 	@Override

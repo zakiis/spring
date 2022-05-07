@@ -18,27 +18,15 @@
   </properties>
   
   <dependencies>
-  
     <dependency>
 	  <groupId>io.github.zakiis</groupId>
 	  <artifactId>zakiis-security</artifactId>
-	  </dependency>
+	</dependency>
     <dependency>
 	  <groupId>org.mybatis</groupId>
 	  <artifactId>mybatis</artifactId>
 	  <scope>provided</scope>
     </dependency>
-    
-    <dependency>
-	    <groupId>org.springframework.boot</groupId>
-	    <artifactId>spring-boot-autoconfigure</artifactId>
-	    <scope>provided</scope>
-	</dependency>
-    <dependency>
-	    <groupId>org.springframework.boot</groupId>
-	    <artifactId>spring-boot-configuration-processor</artifactId>
-	    <optional>true</optional>
-	</dependency>
 	<!-- https://mvnrepository.com/artifact/io.github.openfeign/feign-core -->
 	<dependency>
 	    <groupId>io.github.openfeign</groupId>

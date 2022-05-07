@@ -1,4 +1,4 @@
-package com.zakiis.boot.interceptor.mybatis;
+package com.zakiis.spring.interceptor.mybatis;
 
 import java.lang.reflect.Field;
 import java.sql.Statement;

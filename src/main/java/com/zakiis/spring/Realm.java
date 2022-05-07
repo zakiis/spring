@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.zakiis.boot.interceptor.AuthorizationHandlerInterceptor;
+import com.zakiis.spring.interceptor.AuthorizationHandlerInterceptor;
 
 public interface Realm {
 

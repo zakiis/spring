@@ -1,4 +1,4 @@
-package com.zakiis.boot.feign;
+package com.zakiis.spring.feign;
 
 import java.lang.reflect.Field;
 import java.util.List;
@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.cloud.openfeign.FeignBuilderCustomizer;
 import org.springframework.util.ReflectionUtils;
 
-import com.zakiis.boot.feign.impl.DelegateFeignFilter;
+import com.zakiis.spring.feign.impl.DelegateFeignFilter;
 
 import feign.Client;
 import feign.Feign.Builder;

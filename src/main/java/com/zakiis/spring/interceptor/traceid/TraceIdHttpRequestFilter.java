@@ -1,4 +1,4 @@
-package com.zakiis.boot.interceptor.traceid;
+package com.zakiis.spring.interceptor.traceid;
 
 import java.io.IOException;
 
@@ -14,7 +14,6 @@ import org.springframework.core.annotation.Order;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.web.util.ContentCachingRequestWrapper;
 
-import com.zakiis.boot.autoconfigure.properties.TraceIdProperties;
 import com.zakiis.common.TraceIdUtil;
 
 @Order(Ordered.HIGHEST_PRECEDENCE)
@@ -23,9 +22,9 @@ public class TraceIdHttpRequestFilter extends OncePerRequestFilter {
 	private String traceIdHeaderName;
 	private Logger log = LoggerFactory.getLogger(TraceIdHttpRequestFilter.class);
 	
-	public TraceIdHttpRequestFilter(TraceIdProperties traceIdProperties) {
-		TraceIdUtil.init(traceIdProperties.getAppName() + "_");
-		traceIdHeaderName = traceIdProperties.getHeader();
+	public TraceIdHttpRequestFilter(String appName, String headerName) {
+		TraceIdUtil.init(appName + "_");
+		traceIdHeaderName = headerName;
 	}
 
 	@Override

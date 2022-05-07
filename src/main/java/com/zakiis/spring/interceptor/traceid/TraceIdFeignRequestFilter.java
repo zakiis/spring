@@ -1,6 +1,5 @@
-package com.zakiis.boot.interceptor.traceid;
+package com.zakiis.spring.interceptor.traceid;
 
-import com.zakiis.boot.autoconfigure.properties.TraceIdProperties;
 import com.zakiis.common.TraceIdUtil;
 
 import feign.RequestInterceptor;
@@ -10,9 +9,9 @@ public class TraceIdFeignRequestFilter implements RequestInterceptor {
 
 	private String traceIdHeaderName;
 	
-	public TraceIdFeignRequestFilter(TraceIdProperties traceIdProperties) {
-		TraceIdUtil.init(traceIdProperties.getAppName() + "_");
-		traceIdHeaderName = traceIdProperties.getHeader();
+	public TraceIdFeignRequestFilter(String appName, String headerName) {
+		TraceIdUtil.init(appName + "_");
+		traceIdHeaderName = headerName;
 	}
 	
 	@Override

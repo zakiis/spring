@@ -1,4 +1,4 @@
-package com.zakiis.boot.feign;
+package com.zakiis.spring.feign;
 
 import java.io.IOException;
 import java.util.ArrayList;

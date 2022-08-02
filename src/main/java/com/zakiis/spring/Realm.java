@@ -1,6 +1,6 @@
 package com.zakiis.spring;
 
-import java.util.List;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,5 +13,5 @@ public interface Realm {
 	 * @param request
 	 * @return
 	 */
-	List<String> getRoles(HttpServletRequest request);
+	Set<String> getFunctions(HttpServletRequest request);
 }

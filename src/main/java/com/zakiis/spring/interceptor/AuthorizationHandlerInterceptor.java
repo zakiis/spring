@@ -1,6 +1,6 @@
 package com.zakiis.spring.interceptor;
 
-import java.util.List;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,9 +26,9 @@ public class AuthorizationHandlerInterceptor implements HandlerInterceptor {
 		if (handler instanceof HandlerMethod) {
 			HandlerMethod handlerMethod = (HandlerMethod)handler;
 			Permission permission = handlerMethod.getMethodAnnotation(Permission.class);
-			List<String> roles = realm.getRoles(request);
+			Set<String> functions = realm.getFunctions(request);
 			try {
-				PermissionUtil.checkFunctionAccess(roles, permission);
+				PermissionUtil.checkFunctionAccess(functions, permission);
 			} catch (NoPermissionException e) {
 //				response.setStatus(HttpStatus.UNAUTHORIZED.value());
 				response.addHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
